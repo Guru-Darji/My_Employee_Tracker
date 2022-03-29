@@ -25,3 +25,56 @@ connection.connect(function(err){
     if (err) throw err;
     options();
 })
+
+function options() {
+    inquirer
+        .prompt({
+            name: 'action',
+            type: 'list',
+            message: 'Welcome to our employee database! What would you like to do?',
+            choices: [
+                    'See all employees',
+                    'See all departments',
+                    'See all roles',
+                    'Add employee',
+                    'Add department',
+                    'Add role',
+                    'Change employee role',
+                    'Delete employee',
+                    'EXIT'
+                    ]
+                    
+            }).then(function (answer) {
+                switch (answer.action) {
+                    case 'See all employees':
+                        seeEmployees();
+                        break;
+                    case 'See all departments':
+                        seeDepartments();
+                        break;
+                    case 'See all roles':
+                        seeRoles();
+                        break;
+                    case 'Add employee':
+                        addEmployee();
+                        break;
+                    case 'Add department':
+                        addDepartment();
+                        break;
+                    case 'Add role':
+                        addRole();
+                        break;
+                    case 'Change employee role':
+                        changeRole();
+                        break;
+                    case 'Delete employee':
+                        deleteEmployee();
+                        break;
+                    case 'EXIT': 
+                        exitApp();
+                        break;
+                    default:
+                        break;
+                }
+        })
+};
