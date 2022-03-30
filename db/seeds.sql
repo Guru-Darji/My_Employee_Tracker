@@ -2,27 +2,29 @@ USE employees_db;
 
 INSERT INTO department (name)
 VALUES 
-('Information Systems and Technology'),
-('Finance'),
-('Legal'),
+('Software Developer'),
 ('Human Resources'),
-('Security'),
+('Engineering'),
 ('Sales');
 
 INSERT INTO role (title, salary, department_id)
 VALUES
 ('Web Developer', 80000, 1),
-('Accountant', 75000, 2),
-('Paralegal', 45000, 3),
-('Manager', 85000, 4),
-('Engineer', 80000, 5),
-('Sales Rep', 45000, 6);
+('Lead Web Developer', 125000, 2),
+('Engineer', 85000, 3),
+('Lead Engineer', 130000, 4),
+('Sales Rep', 60000, 5),
+('Lead Sales Rep', 75000, 6),
+('HR Rep', 80000, 7),
+('Lead HR Rep', 95000, 8);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUES 
-('John', 'Doe', 1, 458),
-('Anne', 'Mona', 2, 276),
-('Ridley', 'Maria', 3, 486),
-('Lucio', 'Kenway', 4, 126),
-('Arno', 'Emile', 5, 724),
-('Tom', 'Jerry', 6, 157);
+('John', 'Doe', 1, 078),
+('Anne', 'Mona', 7, 114),
+('Ridley', 'Maria', 2, 232),
+('Lucio', 'Kenway', 4, 457),
+('Arno', 'Emile', 3, 625),
+('Tom', 'Jerry', 5, 117),
+('Cole', 'Rich', 6, 716),
+('Essa', 'Stark', 8, 617);

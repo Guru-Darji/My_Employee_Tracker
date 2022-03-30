@@ -2,13 +2,6 @@ const inquirer = require('inquirer');
 const consoleTable = require('console.table')
 const mysql = require('mysql2');
 
-const PORT = process.env.PORT || 3001;
-const app = express();
-
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
 // Connect to database
 const connection = mysql.createConnection(
     {
@@ -31,7 +24,7 @@ function options() {
         .prompt({
             name: 'action',
             type: 'list',
-            message: 'Welcome to our employee database! What would you like to do?',
+            message: 'Welcome, What would you like to do?',
             choices: [
                     'See all employees',
                     'See all departments',
@@ -117,17 +110,17 @@ function addEmployee() {
                 {
                     name: 'first_name',
                     type: 'input', 
-                    message: "What is the employee's fist name? ",
+                    message: "What is the fist name of employee? ",
                 },
                 {
                     name: 'last_name',
                     type: 'input', 
-                    message: "What is the employee's last name? "
+                    message: "What is the last name of employee? "
                 },
                 {
                     name: 'manager_id',
                     type: 'input', 
-                    message: "What is the employee's manager's ID? "
+                    message: "What is the ID of manager? "
                 },
                 {
                     name: 'role', 
@@ -183,7 +176,7 @@ function addDepartment() {
                 var query = 'SELECT * FROM department';
                 connection.query(query, function(err, res) {
                 if(err)throw err;
-                console.log('Your department has been added!');
+                console.log('Department added!');
                 console.table('All Departments:', res);
                 options();
                 })
