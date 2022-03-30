@@ -14,7 +14,7 @@ This program shows a table of employees and lets you add, select role, and selec
 https://guru-darji.github.io/My_Employee_Tracker/
 
 ## Link to walkthrough
-
+https://drive.google.com/file/d/1b5WLDSBHSVlfdy48GAND3BwKn4LMWhEr/view
 ## Screenshots
 
 ![Screenshot (47)](https://user-images.githubusercontent.com/98906068/160733057-a89a4825-1748-480c-901d-d5cc0aed7655.png)
