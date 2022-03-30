@@ -110,7 +110,7 @@ function addEmployee() {
                 {
                     name: 'first_name',
                     type: 'input', 
-                    message: "What is the fist name of employee? ",
+                    message: "What is the first name of employee? ",
                 },
                 {
                     name: 'last_name',

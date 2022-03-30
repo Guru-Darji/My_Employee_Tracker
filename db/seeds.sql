@@ -18,7 +18,7 @@ VALUES
 ('HR Rep', 80000, 7),
 ('Lead HR Rep', 95000, 8);
 
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
 ('John', 'Doe', 1, 078),
 ('Anne', 'Mona', 7, 114),
