@@ -16,10 +16,10 @@ const connection = mysql.createConnection(
 
 connection.connect(function(err){
     if (err) throw err;
-    options();
+    runApp();
 })
 
-function options() {
+function runApp() {
     inquirer
         .prompt({
             name: 'action',
@@ -76,9 +76,9 @@ function seeEmployees() {
     var query = 'SELECT * FROM employee';
     connection.query(query, function(err, res) {
         if (err) throw err;
-        console.log(res.length + ' employees found!');
+        console.log(res.length + ' employees found');
         console.table('All Employees:', res); 
-        options();
+        runApp();
     })
 };
 
@@ -88,7 +88,7 @@ function seeDepartments() {
     connection.query(query, function(err, res) {
         if(err)throw err;
         console.table('All Departments:', res);
-        options();
+        runApp();
     })
 };
 
@@ -98,7 +98,7 @@ function seeRoles() {
     connection.query(query, function(err, res){
         if (err) throw err;
         console.table('All Roles:', res);
-        options();
+        runApp();
     })
 };
 
@@ -152,8 +152,8 @@ function addEmployee() {
                     },
                     function (err) {
                         if (err) throw err;
-                        console.log('Your employee has been added!');
-                        options();
+                        console.log('Added your employee!');
+                        runApp();
                     })
                 })
         })
@@ -176,9 +176,9 @@ function addDepartment() {
                 var query = 'SELECT * FROM department';
                 connection.query(query, function(err, res) {
                 if(err)throw err;
-                console.log('Department added!');
+                console.log('Department added');
                 console.table('All Departments:', res);
-                options();
+                runApp();
                 })
             })
 };
@@ -203,11 +203,11 @@ function addRole() {
                 name: 'Department',
                 type: 'list',
                 choices: function() {
-                    var deptArry = [];
+                    var deptArr = [];
                     for (let i = 0; i < res.length; i++) {
-                    deptArry.push(res[i].name);
+                    deptArr.push(res[i].name);
                     }
-                    return deptArry;
+                    return deptArr;
                 },
             }
         ]).then(function (answer) {
@@ -229,7 +229,7 @@ function addRole() {
                     if(err)throw err;
                     console.log('Your new role has been added!');
                     console.table('All Roles:', res);
-                    options();
+                    runApp();
                 })
         })
     })
